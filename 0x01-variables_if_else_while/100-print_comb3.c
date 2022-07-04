@@ -3,27 +3,31 @@
 /**
 * main - Prints all possible combination of two digits,
 * in ascending order, separated by comma followed by a space
-*
 * Return: Always 0 (Success)
 */
+
 int main(void)
 {
-int digit1, digit2;
+int i, j;
 
-for (digit1 = 0; digit1 < 9; digit1 ++)
+for (i = '0'; i <= '9'; i++)
 {
-for (digit2 = 0; digit2 + 1; digit2 < 10; digit2++)
+for (j = '0'; j <= '9'; j++)
 {
-putchar((digit1 % 10) + '0')
-putchar((digit2 % 10) + '0')
+if ((i < j) & (j <= '9'))
+{
+putchar(i);
+putchar(j);
 
-if (digit1 == 8 && digit2 == 9)
-continue;
-
+if ((j < '9') | (i < '8'))
+{
 putchar(',');
 putchar(' ');
 }
 }
-
+}
+}
+}
+putchar('\n');
 return (0);
 }
